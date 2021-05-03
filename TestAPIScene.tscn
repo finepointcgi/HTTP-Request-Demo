@@ -1,0 +1,64 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://ApiConnection.gd" type="Script" id=1]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 24.9014
+margin_top = 42.459
+margin_right = 205.901
+margin_bottom = 62.459
+text = "Get Data From API"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="ID" type="RichTextLabel" parent="."]
+margin_left = 294.243
+margin_top = 31.427
+margin_right = 527.243
+margin_bottom = 71.427
+text = "test data"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="User Id" type="RichTextLabel" parent="."]
+margin_left = 295.67
+margin_top = 180.316
+margin_right = 528.67
+margin_bottom = 220.316
+text = "test data"
+
+[node name="Title" type="RichTextLabel" parent="."]
+margin_left = 294.719
+margin_top = 137.98
+margin_right = 527.719
+margin_bottom = 177.98
+text = "test data"
+
+[node name="Completed" type="RichTextLabel" parent="."]
+margin_left = 293.768
+margin_top = 90.4117
+margin_right = 526.768
+margin_bottom = 130.412
+text = "test data"
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 22.0
+margin_top = 92.0
+margin_right = 204.0
+margin_bottom = 112.0
+text = "Put Data on API"
+[connection signal="button_up" from="Button" to="." method="_Get_Api_Data"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
+[connection signal="button_up" from="Button2" to="." method="_on_PutDataOnAPI_button_up"]
